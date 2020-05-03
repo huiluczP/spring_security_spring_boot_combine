@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <meta charset="UTF-8">
+        <title>admin page</title>
+    </head>
+    <body>
+        <div th:replace="welcome::logout"></div>
+        <h2 th:text="${current_user}">admin</h2>
+        <h1>you are an admin user,good</h1>
+        <p><a href="/welcome" th:href="@{/welcome}"> back to home </a>></p>
+    </body>
+</html>

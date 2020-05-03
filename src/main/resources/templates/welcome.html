@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title>Hello Spring Security</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" />
+    </head>
+    <body>
+        <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+            <div>
+                <form action="#" th:action="@{/logout}" method="post">
+                    <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+        <h1>welcome, click link below</h1>
+        <ul>
+            <li>Go to the <a href="/admin/info" th:href="@{/admin/info}">secured pages: admin user info</a></li>
+            <li>Go to the <a href="/common/info" th:href="@{/common/info}">secured pages: common user info</a></li>
+            <li>Go to the <a href="/vip/info" th:href="@{/vip/info}">secured pages: vip user info</a></li>
+        </ul>
+    </body>
+</html>
